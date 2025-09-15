@@ -1,5 +1,5 @@
-const PropertyPage = () => {
-  return <div>Property Page</div>;
+const PropertyPage = ({ params, searchParams }) => {
+  return <div>Property Page {searchParams.name}</div>;
 };
 
 export default PropertyPage;
