@@ -6,8 +6,9 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 
 const PropertyPage = async ({ params }) => {
+  const { id } = await params;
   await connectDB();
-  const property = await Property.findById(params.id).lean();
+  const property = await Property.findById(id).lean();
 
   return (
     <>
