@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
-import "@/assets/styles/globals.css";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
+import "@/assets/styles/globals.css";
 
 export const metadata = {
   title: "Property Pulse",
