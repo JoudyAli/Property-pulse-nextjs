@@ -8,7 +8,7 @@ const connectDB = async () => {
   //If the database is allready connected, donot connect agin
 
   if (connected) {
-    console.log("MongoDB is already connectrd");
+    console.log("MongoDB connected");
     return;
   }
 
