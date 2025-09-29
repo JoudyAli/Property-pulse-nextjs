@@ -5,11 +5,21 @@ import connectDB from "@/config/database";
 import Property from "@/models/Property";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import { convertToSerializableObject } from "@/utils/convertToObject";
 
 const PropertyPage = async ({ params }) => {
   const { id } = await params;
   await connectDB();
-  const property = await Property.findById(id).lean();
+  const propertyDoc = await Property.findById(id).lean();
+  const property = convertToSerializableObject(propertyDoc);
+
+  if (!property) {
+    return (
+      <h1 className="text-center text-2xl font-blod mt-10">
+        Property Not Found
+      </h1>
+    );
+  }
 
   return (
     <>
