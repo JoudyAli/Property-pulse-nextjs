@@ -41,11 +41,13 @@ const ShareButtons = ({ property }) => {
           <WhatsappIcon size={40} round={true} />
         </WhatsappShareButton>
         <EmailShareButton
-          url={shareUrl} // يبقى كمرجع إضافي
+          // dosent work
+          url={shareUrl}
           subject={encodeURIComponent(property.name)}
           body={encodeURIComponent(
             `Check out this property listing: ${shareUrl}`
           )}
+          separator=" :: "
         >
           <EmailIcon size={40} round={true} />
         </EmailShareButton>
