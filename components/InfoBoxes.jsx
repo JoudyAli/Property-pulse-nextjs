@@ -26,7 +26,7 @@ const InfoBoxes = () => {
               backgroundColor: "bg-blue-500",
             }}
           >
-            Find your dream rental propertysdas sdasdas
+            List your rental property
           </InfoBox>
         </div>
       </div>

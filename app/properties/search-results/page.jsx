@@ -40,7 +40,6 @@ const SearchResultsPage = async ({ searchParams }) => {
           <Link
             href="/properties"
             className="flex items-center  text-blue-500 hover:underline mb-3"
-            mb-3
           >
             <FaArrowCircleLeft className="mr-2 mb-1" /> Back to All Properties
           </Link>
