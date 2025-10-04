@@ -1,11 +1,10 @@
 "use client";
-
 import { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormState } from "react-dom";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import addMessage from "@/app/actions/addMessage";
-import { FaPaperPlane } from "react-icons/fa";
+import SubmitMesssageButton from "./SubmitMesssageButton";
 
 const initialState = { submitted: false, error: null };
 
@@ -103,14 +102,8 @@ const PropertyContactForm = ({ property }) => {
               placeholder="Enter your message"
               className="shadow border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline"
             ></textarea>
+            <SubmitMesssageButton />
           </div>
-
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full flex items-center justify-center"
-          >
-            <FaPaperPlane className="mr-2" /> Send Message
-          </button>
         </form>
       </div>
     )
