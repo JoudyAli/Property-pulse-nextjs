@@ -10,7 +10,7 @@ const ProfileProperties = ({ properties: initialProperties }) => {
 
   const handleDeleteProperty = async (propertyId) => {
     const confirmed = window.confirm(
-      "Are you sure you want to delet this property?"
+      "Are you sure you want to delete this property?"
     );
 
     if (!confirmed) return;
@@ -23,6 +23,14 @@ const ProfileProperties = ({ properties: initialProperties }) => {
     setProperties(updatedProperties);
     toast.success("Property Deleted Successfully");
   };
+
+  if (properties.length === 0) {
+    return (
+      <p className="text-red-500 font-semibold text-lg">
+        You have no listings.
+      </p>
+    );
+  }
 
   return properties.map((property) => (
     <div key={property._id} className="mb-10">
@@ -38,8 +46,7 @@ const ProfileProperties = ({ properties: initialProperties }) => {
       <div className="mt-2">
         <p className="text-lg font-semibold">{property.name}</p>
         <p className="text-gray-600">
-          Address: {property.location.street}
-          {property.location.city}
+          Address: {property.location.street}, {property.location.city},{" "}
           {property.location.state}
         </p>
       </div>
