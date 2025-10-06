@@ -26,7 +26,8 @@ const InfoBoxes = () => {
               backgroundColor: "bg-blue-500",
             }}
           >
-            List your rental property
+            List your beautiful rental property with us today and reach more
+            potential tenants
           </InfoBox>
         </div>
       </div>
