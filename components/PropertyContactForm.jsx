@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import { useFormState } from "react-dom";
+//import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import addMessage from "@/app/actions/addMessage";
@@ -12,7 +13,7 @@ const PropertyContactForm = ({ property }) => {
   const { data: session } = useSession();
 
   // Correct hook: useFormState
-  const [state, formAction] = useFormState(addMessage, initialState);
+  const [state, formAction] = useActionState(addMessage, initialState);
 
   useEffect(() => {
     if (state.error) toast.error(state.error);
