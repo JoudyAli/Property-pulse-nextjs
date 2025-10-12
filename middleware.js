@@ -1,19 +1,18 @@
 import { withAuth } from "next-auth/middleware";
 
+console.log(
+  "🧩 NEXTAUTH_SECRET available in Edge:",
+  !!process.env.NEXTAUTH_SECRET
+);
+console.log("🧩 NEXTAUTH_URL:", process.env.NEXTAUTH_URL);
+
 export default withAuth(
   function middleware(req) {
-    console.log("Middleware triggered for:", req.nextUrl.pathname);
-    console.log("Token exists:", !!req.nextauth.token);
-    console.log("User:", req.nextauth.token?.email);
+    return;
   },
   {
     callbacks: {
-      authorized: ({ req, token }) => {
-        console.log("Authorization check for:", req.nextUrl.pathname);
-        console.log("Token present:", !!token);
-        console.log("NEXTAUTH_URL:", process.env.NEXTAUTH_URL);
-        return !!token;
-      },
+      authorized: ({ token }) => !!token,
     },
   }
 );
